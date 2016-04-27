@@ -1,6 +1,5 @@
 package cn.studyjams.s1.sj33.weimulin;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -13,8 +12,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     final int PAGE_COUNT = 5;
-    private String tabTitles[] = new String[]{"简介","历史","规则","政治","技战"};
-    private Context context;
+    private String tabTitles[] = new String[]{"简介", "历史", "规则", "政治", "技战"};
 
     public SimpleFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -22,9 +20,9 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        switch (position){
+        switch (position) {
             case 0:
-                return IntroductionFragment.newInstance("","");
+                return IntroductionFragment.newInstance("", "");
             case 1:
                 return HistoryFragment.newInstance("", "");
             case 2:
@@ -45,6 +43,10 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return tabTitles[position];
+        if (position < 0 || position > 4) {
+            return "";
+        } else {
+            return tabTitles[position];
+        }
     }
 }

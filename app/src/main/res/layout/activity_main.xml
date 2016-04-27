@@ -8,13 +8,6 @@
     android:orientation="vertical"
     tools:context="cn.studyjams.s1.sj33.weimulin.MainActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        android:src="@drawable/table_tennis_at_chinese_village"/>
-
     <android.support.design.widget.TabLayout
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
